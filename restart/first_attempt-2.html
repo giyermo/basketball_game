@@ -1,0 +1,244 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>  
+  </head>
+  <body>
+    <a-scene physics="debug: true">
+      <a-assets>
+    		<img id="marcador" src="marcador1.jpg">
+    		<img id="pista" src="pistalakers.jpg">
+    		<img id="grada" src="grada.jpg">
+    		<img id="techo" src="techo.jpg">
+    		<img id="texturabola" src="texturabola.jpg">
+    		<a-asset-item id="bighoop" src="basketball_hoop/scene.gltf"></a-asset-item>
+    		<a-asset-item id="bola" src="basketball/scene.gltf"></a-asset-item>
+    		<a-asset-item id="foco" src="foco/scene.gltf"></a-asset-item>
+    		
+  		</a-assets>
+  		
+  		<a-cylinder 
+         position="0 10 0"
+         material="src: #marcador; repeat: 2 1"
+      	animation="property: rotation; from: 0 0 0; to: 0 360 0; dur: 50000; loop: -1; easing:linear"
+         radius="5" height="6" 
+         static-body>
+      </a-cylinder>
+  		
+  		<a-plane
+  		   id="campojuego"
+  		   position="0 -10 0"
+  		   rotation="-90 0 0" 
+  		   width="30.82" height="16.82" 
+  		   src="#pista" 
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="grada1"
+  		   position="0 -1 21.4"
+  		   rotation="55 0 0" 
+  		   width="31" height="50"  
+  		   material="src: #grada; repeat: 1.61 3"
+  		   side="double"
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="grada2.5"
+  		   position="23.5 -1 13.5"
+  		   rotation="45 45 0" 
+  		   width="50" height="50"  
+  		   side="double"
+  		   material="src: #grada; repeat: 2 3"
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="grada2"
+  		   position="0 -1 -21.4"
+  		   rotation="55 180 0" 
+  		   width="31" height="50"  
+  		   side="double"
+  		   material="src: #grada; repeat: 1.61 3"
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="grada2.5"
+  		   position="23.5 -1 -13.5"
+  		   rotation="45 135 0" 
+  		   width="50" height="50"  
+  		   side="double"
+  		   material="src: #grada; repeat: 2 3"
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="grada3"
+  		   position="28.2 -1 0"
+  		   rotation="55 90 0" 
+  		   width="16.82" height="50"  
+  		   side="double"
+  		   material="src: #grada; repeat: 1 3"
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="grada3.5"
+  		   position="-23.5 -1 -13.5"
+  		   rotation="45 225 0" 
+  		   width="50" height="50"  
+  		   side="double"
+  		   material="src: #grada; repeat: 2 3"
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="grada4"
+  		   position="-28.2 -1 0"
+  		   rotation="55 270 0" 
+  		   width="16.82" height="50"  
+  		   side="double"
+  		   material="src: #grada; repeat: 1 3"
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="grada4.5"
+  		   position="-23.5 -1 13.5"
+  		   rotation="45 315 0" 
+  		   width="50" height="50"  
+  		   side="double"
+  		   material="src: #grada; repeat: 2 3"
+  		   static-body>
+  		</a-plane>
+  		 	   
+  	   <a-plane
+  		   id="techo"
+  		   position="0 13 0"
+  		   rotation="90 0 0" 
+  		   width="100" height="100" 
+  		   material="src: #techo; repeat: 10 10" 
+  		   side"double"
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="campodefuerza1"
+  		   position="15.5 0 0"
+  		   rotation="180 270 90" 
+  		   width="33" height="19" 
+  		   transparent="true" 
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  			id="campodefuerza2"
+  		   position="-15.5 0 0"
+  		   rotation="180 90 90" 
+  		   width="33" height="19" 
+  		   transparent="true" 
+  		   static-body>
+  		</a-plane>
+  		
+      <a-plane 
+      	id="campodefuerza3"
+  		   position="0 0 -8.5"
+  		   rotation="180 0 90" 
+  		   width="33" height="33" 
+  		   transparent="true" 
+  		   static-body>
+  		</a-plane>
+  		
+  		<a-plane 
+  		   id="campodefuerza4"
+  		   position="0 0 8.5"
+  		   rotation="180 180 90" 
+  		   width="33" height="33" 
+  		   transparent="true" 
+  		   static-body>
+  		</a-plane>
+  		   
+  		<a-entity
+  			id="aro1"
+         position="-13 -8 0"
+         scale="2 2 2" 
+         gltf-model="#bighoop"
+         static-body>
+      </a-entity>
+         
+      <a-entity 
+      	id="aro2"
+         position="13 -8 0"
+         scale="2 2 2" 
+         rotation="0 180 0"
+         gltf-model="#bighoop"
+         static-body>
+      </a-entity>
+      
+      <a-sphere
+      id="bola"
+         position="0 -5 0"
+         radius="1"
+         dynamic-body>
+      </a-sphere>
+         
+<!--      <a-entity
+      	id="bola"
+         position="0 0 0"  
+         mass="0.001"
+         scale="0.15 0.15 0.15" 
+         gltf-model="#bola" 
+         dynamic-body>
+      </a-entity>
+-->  		         
+  		<a-light
+  		   id="luz1"
+  		   position="15.41 12.5 8.41"
+  		   type="point"
+  		   intensity="0.5"
+      	color="white">
+      </a-light> 
+      
+      <a-entity 
+      	id="foco1"
+         position="28.41 11.5 21.41"
+         scale="0.5 0.5 0.5" 
+         rotation="0 135 -15"
+         gltf-model="#foco"
+         static-body>
+      </a-entity>  
+      
+      <a-light
+  		   id="luz2"
+  		   position="15.41 12.5 -8.41"
+  		   type="point"
+  		   intensity="0.5"
+      	color="white">
+      </a-light>   
+      
+      <a-light
+  		   id="luz3"
+  		   position="-15.41 12.5 -8.41"
+  		   type="point"
+  		   intensity="0.5"
+      	color="white">
+      </a-light>   
+      
+      <a-light
+  		   id="luz4"
+  		   position="-15.41 12.5 8.41"
+  		   type="point"
+  		   intensity="0.5"
+      	color="white">
+      </a-light>         
+                 
+      <a-entity movement-controls kinematic-body="radius: .3">      
+      	<a-entity camera position="0 2 0" look-controls></a-entity>
+      <a-entity>
+      
+    </a-scene>
+  </body>
+</html>
